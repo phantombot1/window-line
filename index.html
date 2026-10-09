@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Window-Line — ramen en deuren aan groothandelsprijs</title>
+<meta name="description" content="Ramen en deuren op maat aan groothandelsprijs, nu ook voor particulieren. Tot 40% goedkoper dan een offerte met plaatsing inbegrepen. Prijs binnen 48 uur.">
+<meta name="theme-color" content="#F2F7FC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Window-Line — ramen en deuren aan groothandelsprijs">
+<meta property="og:description" content="Groothandelsprijzen, nu ook voor particulieren. Plaatsen doet een vakman uit je eigen buurt. Prijs binnen 48 uur.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script>
+/* ══════════════════════════════════════════════════════════════════
+   INSTELLINGEN  —  pas ALLEEN dit blok aan. Verder niets nodig.
+   Opslaan, index.html openen in de browser, klaar.
+   ══════════════════════════════════════════════════════════════════ */
+const INSTELLINGEN = {
+
+  // --- Bedrijf -----------------------------------------------------
+  BEDRIJFSNAAM:   "Window-Line",
+  LOGO_KORT:      "WL",
+  SLOGAN:         "Ramen & deuren",
+  /* De naam in de menubalk. Wat tussen *sterretjes* staat is blauw.
+     Ander streepje? Vervang het door - of · of een gewone spatie. */
+  MERK_TEKST:     "WINDOW - *LINE*",
+
+  // --- Contact -----------------------------------------------------
+  TELEFOON:       "+32 492 94 15 82",
+  TELEFOON_LINK:  "+32492941582",
+
+  // WhatsApp. Nummer zonder +, zonder spaties, met landcode.
+  // Leeg laten ("") en alle WhatsApp-knoppen verdwijnen vanzelf.
+  WHATSAPP:       "32492941582",
+  WHATSAPP_TEKST: "Dag, ik zag jullie site en had graag een prijs voor ramen of deuren.",
+  WHATSAPP_ZWEEF: true,          // de vaste knop rechtsonder
+  EMAIL:          "info@windowline.be",
+  GEMEENTE:       "Aartselaar",
+  ADRES_VOLLEDIG: "Nieuwstraat 10, 2630 Aartselaar",   // alleen klein onderaan
+  BTW_NUMMER:     "BE 0898.949.478",
+  WERKGEBIED:     "Antwerpen",
+
+  /* --- Verkoopargument ---------------------------------------------
+     BESPARING is het percentage in de titel en in het aanbodblok.
+     VERGELIJKING zegt waarmee vergeleken wordt. Laat die zin staan:
+     een percentage zonder vergelijkingspunt is een claim die je
+     moet kunnen bewijzen.
+  ------------------------------------------------------------------ */
+  /* De eerste twee regels die een bezoeker leest. Wat tussen
+     *sterretjes* staat, krijgt de accentkleur. */
+  TITEL:          "Groothandelsprijzen. Nu ook voor *particulieren.*",
+  OPENING:        "Ramen en deuren op maat, tot *40%* goedkoper. Plaatsen doet een vakman uit jouw eigen buurt — je aannemer, je schrijnwerker, of een plaatser die we je aanbrengen.",
+
+  BESPARING:      "40%",
+  VERGELIJKING:   "dan een offerte met plaatsing inbegrepen",
+
+  /* --- Toonzaal -----------------------------------------------------
+     TOONZAAL_TONEN op false laat de hele sectie weg.
+     Zet de gemeente en de openingstijden erbij zodra je ze hebt.
+  ------------------------------------------------------------------ */
+  SHOWROOM:          "Op afspraak, alle stalen fysiek te bekijken",
+  TOONZAAL_TONEN:    true,
+  TOONZAAL_PARTNER:  "ARW",
+  TOONZAAL_MERK:     "JouwVakman",          // de naam waaronder ze online staan
+  TOONZAAL_STRAAT:   "Kesselsesteenweg 85",
+  TOONZAAL_PLAATS:   "2500 Lier",
+  TOONZAAL_TIJDEN:   "Ma, di, do 11-18u · vr, za 11-17u",
+  // Leeg laten = er wordt automatisch een zoeklink naar Google Maps gemaakt.
+  TOONZAAL_KAART:    "",
+  // Openingsuren in het bezoekkaartje. Leeg laten = de lijst verdwijnt.
+  TOONZAAL_UREN: [
+    ["Maandag",   "11:00 – 18:00"],
+    ["Dinsdag",   "11:00 – 18:00"],
+    ["Woensdag",  "Gesloten"],
+    ["Donderdag", "11:00 – 18:00"],
+    ["Vrijdag",   "11:00 – 17:00"],
+    ["Zaterdag",  "11:00 – 17:00"],
+    ["Zondag",    "Gesloten"]
+  ],
+  /* De staat van dienst van de verdeler. Vul aan met de exacte titel
+     en het jaar zodra je die hebt — claim niets wat je niet kan tonen. */
+  PARTNER_STERKTE:   "al jaren een van de grootste verdelers in de provincie Antwerpen",
+
+  // --- Profielen ---------------------------------------------------
+  TOON_MERK:      true,
+  PROFIELMERK:    "Deceuninck",
+  SYSTEEM_PVC:    "Elegant",
+  SYSTEEM_ALU:    "Decalu",
+
+  /* --- Kleurstalen -------------------------------------------------
+     TOON_STAALFOTOS op true gebruikt de echte staalafbeeldingen die
+     onderaan dit bestand meegeleverd zijn. Zet op false zolang je
+     geen schriftelijke toelating van de fabrikant hebt; dan valt de
+     site terug op een effen weergave van dezelfde kleur.
+  ------------------------------------------------------------------ */
+  TOON_STAALFOTOS: true,
+
+  /* --- Foto's per model --------------------------------------------
+     Leeg = de site toont de tekening met de echte folietextuur.
+     Vul je een bestandsnaam in, dan vervangt de foto de tekening.
+     Foto's in een map "fotos" naast index.html.
+     Max 1600 px breed, 200-300 kB, .webp of .jpg, kleine letters.
+  ------------------------------------------------------------------ */
+  MODELFOTOS: {
+    "Infinity":              "",
+    "ThermoFibra Infinity":  "",
+    "Abstract":              "",
+    "Origin":                "",
+    "Autentica":             "",
+    "Schuifraam":            ""
+  },
+
+  /* --- Beeldmateriaal ----------------------------------------------
+     De foto's staan in de map "fotos" naast index.html.
+     Elke foto heeft een grote versie en een kleine (-klein) voor
+     het raster. Wil je er een weglaten: zet de regel in commentaar
+     met twee schuine strepen vooraan.
+  ------------------------------------------------------------------ */
+  // Het logobeeld bovenaan. Leeg laten = de foto van het raam staat er.
+  HERO_LOGO: "",
+  HERO_FOTO: "fotos/leefruimte-keuken-zwart.jpg",
+
+  GALERIJ: [
+    { bestand:"schuifpui-tuinzicht",        titel:"Schuifpui met tuinzicht",detail:"Antracietgrijs, hoekprofiel met vast zijlicht" },
+    { bestand:"raam-drievleugel-antraciet",  titel:"Driedelig raam",        detail:"Antracietgrijs, vaste en opendraaiende delen" },
+    { bestand:"schuifdeur-antraciet-terras", titel:"Schuifdeur naar terras",detail:"Antracietgrijs, met voorzetrolluik en hor" },
+    { bestand:"hoekschuifdeur-antraciet",    titel:"Schuifpui op hoek",     detail:"Antracietgrijs, twee gevels aansluitend" },
+    { bestand:"raam-tweevleugel-antraciet",  titel:"Tweedelig raam",        detail:"Antracietgrijs, ingebouwd rolluik" },
+    { bestand:"gevel-topgevel-grijs",        titel:"Topgevel",              detail:"Grijs, met gevelbekleding in dezelfde tint" },
+    { bestand:"raam-smal-grijs",             titel:"Smal vast raam",        detail:"Grijs, naast de voordeur" },
+    { bestand:"vast-raam-zandkleur",         titel:"Groot vast raam",       detail:"Zandkleur, met raamtablet in dezelfde tint" },
+    { bestand:"detail-profiel-zandkleur",    titel:"Profieldetail",         detail:"Zandkleur, aansluiting kader en vleugel" },
+    { bestand:"gevel-houtdecor",             titel:"Volledige gevel",       detail:"Houtdecor, ramen, schuifdeur en achterdeur" },
+    { bestand:"raam-houtdecor",              titel:"Tweedelig raam",        detail:"Houtdecor in een gerenoveerde gevel" },
+    { bestand:"voordeur-zwart",              titel:"Voordeur",              detail:"Zwart, met lange greep over de volle hoogte" },
+    { bestand:"voordeur-detail-zwart",       titel:"Voordeur met bovenlicht",detail:"Zwart, vast glas boven en naast de deur" },
+    { bestand:"gevel-voordeur-garage",       titel:"Voorgevel",             detail:"Antracietgrijs, voordeur, raam en sectionaalpoort" }
+  ],
+
+  /* --- Referenties -------------------------------------------------
+     Zolang deze lijst leeg is, blijft de hele sectie onzichtbaar.
+     Eerst schriftelijke toestemming van de klant, en geen huisnummer,
+     brievenbus of straatnaambord in beeld.
+  ------------------------------------------------------------------ */
+  REFERENTIES: [
+    // {
+    //   titel:     "Rijwoning, 12 openingen",
+    //   plaats:    "Boom",
+    //   voor:      "fotos/boom-voor.jpg",
+    //   na:        "fotos/boom-na.jpg",
+    //   details:   "Infinity, antracietgrijs mat (ref. 103), hoogrendementsglas",
+    //   doorloop:  "5 weken van bestelling tot levering"
+    // },
+  ],
+
+  // --- Formulier ---------------------------------------------------
+  FORMULIER_ENDPOINT: "",
+
+  // --- Inhoud ------------------------------------------------------
+  REACTIETERMIJN: "48 uur",
+  TOON_SPECIALS:  true,
+
+  // --- Uitstraling -------------------------------------------------
+  /* Achtergrondkleur van de site. Op wit valt de muur rond het logo
+     op; met een grijs uit het logo valt die weg maar wordt het blauw
+     zwakker. Tinten om te proberen: #FFFFFF · #F4F4F3 · #C6C3C4 · #A09D9E */
+  SITE_GRIJS:     "#F2F7FC",
+  BLAUWE_SCHIJN:  true,                     // zachte blauwe gloed over de hele pagina
+  TOON_BETON:     false,                    // betontextuur uit het logo als achtergrond
+  BETON_SCHAAL:   "224px",                  // korrelgrootte; kleiner = fijner
+  LOGO_BLAUW:     "#3A95E1",                // het lichtere blauw uit het logo
+  LOGO_DIEP:      "#1975B9"                 // het donkere blauw uit het logo
+};
+/* ═══════════════ EINDE INSTELLINGEN ══════════════════════════════ */
+</script>
+
+<style>
+:root{
+  --nacht:#F2F7FC;--diep:#FFFFFF;--warm:#3A95E1;--koel:#1975B9;
+  --wit:#232A30;--zacht:#30363B;--lijn:rgba(35,42,48,.16);
+  --papier:#FFFFFF;--inkt:#232A30;--inkt-zacht:#6C767D;--blauw:#1975B9;
+  --maxw:1220px;--rond:26px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--nacht);color:var(--wit);
+  font-family:'Instrument Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0;
+}
+body.schijn::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(60% 45% at 85% 0%,   rgba(58,149,225,.26), transparent 70%),
+    radial-gradient(55% 40% at 5% 25%,   rgba(25,117,185,.16), transparent 72%),
+    radial-gradient(70% 50% at 50% 100%, rgba(58,149,225,.18), transparent 70%);
+}
+.wrap,.nav,.hero-in,footer{position:relative;z-index:1}
+body.beton{background-color:var(--nacht);background-repeat:repeat}
+
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.035em;line-height:1.03}
+h2{font-size:clamp(2rem,4.6vw,3.4rem);margin-bottom:.4em}
+h3{font-size:1.15rem;font-weight:600;letter-spacing:-.02em;line-height:1.25}
+p{margin:0 0 1em}
+.lead{font-size:1.08rem;color:var(--zacht);max-width:58ch}
+.gloed{color:var(--koel)}
+section{padding:clamp(48px,6vw,86px) 0;position:relative}
+.verborgen{display:none!important}
+
+/* ── Navigatie ─────────────────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--lijn)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:9px 24px;display:flex;align-items:center;gap:26px}
+.merk{display:inline-block;text-decoration:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;font-size:1.06rem;white-space:nowrap}
+.merk em{font-style:normal;color:var(--koel)}
+.merk .gloed{color:var(--koel)}
+.logoband{display:block;width:100%;background-color:#B4B3B2;
+  background-repeat:no-repeat,repeat;background-position:center,center;
+  background-size:auto 88%,128px 128px;background-blend-mode:normal,overlay}
+.logoband.breed{aspect-ratio:6/1}
+.logoband.smal{aspect-ratio:2.2/1;display:none;background-size:84% auto,128px 128px}
+@media(max-width:760px){
+  .logoband.breed{display:none}
+  .logoband.smal{display:block}
+}
+.nav-links{display:flex;gap:20px;margin-left:auto;align-items:center}
+.nav-links a{text-decoration:none;font-size:.93rem;font-weight:500;color:var(--zacht)}
+.nav-links a:hover{color:var(--wit)}
+.knop{display:inline-block;border:0;cursor:pointer;text-decoration:none;font:inherit;font-weight:600;font-size:.97rem;
+  padding:13px 26px;border-radius:100px;background:var(--koel);color:#fff;
+  transition:transform .16s ease,filter .16s ease}
+.knop:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.knop-glas{background:#EAF1F9;color:var(--wit);border:1px solid var(--lijn);backdrop-filter:blur(10px)}
+.knop-glas:hover{background:#fff;border-color:rgba(35,42,48,.25)}
+.nav-toggle{display:none;margin-left:auto;background:#EAF1F9;color:var(--wit);border:1px solid var(--lijn);border-radius:100px;padding:9px 16px;font:inherit;font-size:.9rem;cursor:pointer}
+@media(max-width:1040px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--nacht);flex-direction:column;gap:0;padding:10px 24px 22px;border-bottom:1px solid var(--lijn)}
+  .nav-links.open{display:flex}
+  .nav-links a{width:100%;padding:14px 0;border-bottom:1px solid var(--lijn)}
+  .nav-links .knop{margin-top:14px;text-align:center}
+  .nav-toggle{display:block}
+}
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero{padding:clamp(44px,5.5vw,76px) 0 clamp(44px,5vw,70px);position:relative;overflow:hidden}
+.licht{position:absolute;inset:-25% -10% auto -10%;height:130%;z-index:0;filter:blur(100px);opacity:.3;
+  background:
+    radial-gradient(46% 52% at 22% 26%,var(--warm) 0%,transparent 62%),
+    radial-gradient(52% 58% at 76% 60%,var(--koel) 0%,transparent 64%),
+    radial-gradient(40% 44% at 52% 96%,#1975B9 0%,transparent 60%);
+  animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-4%,3%,0) scale(1.12)}}
+.hero-in{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,6.6vw,5rem);letter-spacing:-.045em;max-width:14ch}
+.hero .lead{font-size:1.14rem;margin-top:22px;color:#49535A}
+.hero-acties{display:flex;flex-wrap:wrap;gap:13px;margin-top:32px}
+.hero-foto{position:relative;margin:0;border-radius:var(--rond);overflow:hidden;
+  box-shadow:0 18px 44px rgba(35,42,48,.22);background:#C9C8C6;aspect-ratio:3/2}
+.hero-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-foto.is-logo{aspect-ratio:auto;background:transparent;box-shadow:0 18px 44px rgba(35,42,48,.2)}
+.hero-foto.is-logo img{height:auto;object-fit:contain}
+.hero-foto.is-logo .streek{display:none}
+.streek{position:absolute;top:-60%;left:-70%;width:45%;height:230%;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transform:rotate(16deg);
+  animation:sweep 2.4s cubic-bezier(.5,0,.2,1) .5s 1 forwards}
+@keyframes sweep{to{left:130%}}
+@media(max-width:900px){.hero-in{grid-template-columns:1fr;gap:38px}.hero-foto{aspect-ratio:16/10}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.licht,.ticker-spoor{animation:none!important}.streek{display:none}*{transition:none!important}
+}
+
+/* ── Ticker ────────────────────────────────────────────────── */
+.ticker{border-top:1px solid var(--lijn);border-bottom:1px solid var(--lijn);padding:18px 0;overflow:hidden;background:rgba(255,255,255,.66)}
+.ticker-spoor{display:flex;gap:44px;width:max-content;animation:loop 34s linear infinite;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:-.02em;color:var(--zacht);white-space:nowrap}
+.ticker-spoor span{display:flex;align-items:center;gap:44px}
+.ticker-spoor span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--koel)}
+@keyframes loop{to{transform:translateX(-50%)}}
+
+/* ── Cijferbalk ────────────────────────────────────────────── */
+.cijfers{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--lijn);border-radius:var(--rond);overflow:hidden;border:1px solid var(--lijn)}
+.cijfer{background:var(--diep);padding:24px 22px}
+.cijfer b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-.03em;margin-bottom:6px}
+.cijfer span{font-size:.92rem;color:var(--zacht);line-height:1.45}
+@media(max-width:900px){.cijfers{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.cijfers{grid-template-columns:1fr}}
+
+
+/* ── Galerij ───────────────────────────────────────────────── */
+.galerij{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gfoto{padding:0;border:0;background:none;cursor:zoom-in;text-align:left;font:inherit;color:inherit}
+.gfoto figure{margin:0;border-radius:16px;overflow:hidden;background:#C9C8C6;aspect-ratio:4/3;
+  border:1px solid var(--lijn);transition:transform .2s ease,box-shadow .2s ease}
+.gfoto img{width:100%;height:100%;object-fit:cover;display:block}
+.gfoto:hover figure{transform:translateY(-3px);box-shadow:0 12px 26px rgba(35,42,48,.2)}
+.gfoto b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;
+  letter-spacing:-.02em;margin-top:11px}
+.gfoto span{display:block;font-size:.85rem;color:var(--zacht);line-height:1.35;margin-top:2px}
+@media(max-width:900px){.galerij{grid-template-columns:1fr 1fr;gap:13px}}
+@media(max-width:560px){.galerij{grid-template-columns:1fr}}
+
+/* ── Lichtbak ──────────────────────────────────────────────── */
+#lichtbak{border:0;padding:0;background:transparent;max-width:min(94vw,1200px);max-height:94vh;color:var(--wit)}
+#lichtbak::backdrop{background:rgba(18,22,25,.94)}
+#lichtbak img{width:100%;max-height:82vh;object-fit:contain;border-radius:14px;display:block}
+#lichtbak p{margin:12px 2px 0;font-size:.92rem;color:var(--zacht)}
+.sluit{position:absolute;top:-6px;right:-6px;z-index:5;width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--lijn);background:rgba(26,32,36,.92);color:var(--wit);font-size:1.5rem;
+  line-height:1;cursor:pointer;backdrop-filter:blur(8px)}
+.sluit:hover{background:rgba(255,255,255,.14)}
+
+
+/* ── Hoe het werkt ─────────────────────────────────────────── */
+.drieluik{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.luik{background:linear-gradient(160deg,#FFFFFF,#F6FAFE);
+  border:1px solid var(--lijn);border-radius:var(--rond);padding:30px}
+.luik .nr{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;
+  background:var(--koel);color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:1rem;margin-bottom:16px}
+.luik p{color:var(--zacht);font-size:.96rem;margin:9px 0 0}
+.uitleg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:18px}
+.uitleg>div{background:rgba(25,117,185,.09);border:1px solid rgba(25,117,185,.28);
+  border-radius:var(--rond);padding:28px}
+.uitleg p{color:#3E4B55;font-size:.95rem;margin:9px 0 0}
+.uitleg .geen{background:linear-gradient(160deg,#FFFFFF,#F6FAFE);
+  border-color:var(--lijn)}
+.uitleg .geen p{color:var(--zacht)}
+@media(max-width:940px){.drieluik,.uitleg{grid-template-columns:1fr}}
+
+/* ── Gekozen kleur ─────────────────────────────────────────── */
+.gekozen{display:flex;align-items:center;gap:18px;padding:16px;margin-bottom:20px;
+  background:#F1F3F0;border:1px solid #E1E5E1;border-radius:14px}
+.gekozen-vlak{width:88px;height:88px;flex:none;border-radius:4px;background-size:cover;background-position:center;
+  box-shadow:0 2px 6px rgba(0,0,0,.28), inset 0 0 0 1px rgba(0,0,0,.14)}
+.gekozen-tekst{min-width:0}
+.gekozen-kop{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--inkt-zacht)}
+.gekozen-tekst b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:1.35rem;font-weight:700;
+  letter-spacing:-.025em;color:var(--inkt);margin:3px 0 2px;line-height:1.15}
+.gekozen-tekst span+b+span{color:var(--inkt-zacht)}
+.gekozen-tekst #gekozenRef{font-size:.87rem;color:#4B5B60;font-weight:600}
+@media(max-width:520px){.gekozen{flex-direction:column;align-items:flex-start}.gekozen-vlak{width:100%;height:120px}}
+
+/* ── Kleurenkaart, lichte stijl ────────────────────────────── */
+.kaart{background:var(--papier);color:var(--inkt);border-radius:22px;padding:24px;
+  box-shadow:0 10px 30px rgba(35,42,48,.14)}
+.groepknoppen{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.groepknop{cursor:pointer;font:inherit;font-size:.83rem;font-weight:600;color:#43575D;
+  background:#EDEFEC;border:1px solid #DDE1DD;border-radius:100px;padding:8px 15px;transition:background .15s,color .15s}
+.groepknop:hover{background:#E1E5E0}
+.groepknop[aria-pressed="true"]{color:#fff;background:var(--inkt);border-color:var(--inkt)}
+.groepknop small{font-weight:500;opacity:.7;margin-left:5px}
+
+.zoekrij{display:flex;gap:10px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.zoek{flex:1;min-width:190px;padding:10px 15px;border:1px solid #DDE1DD;border-radius:100px;
+  background:#fff;color:var(--inkt);font:inherit;font-size:.92rem}
+.zoek::placeholder{color:#8A9299}
+.zoek:focus{outline:2px solid var(--blauw);outline-offset:1px}
+.telling{font-size:.84rem;color:var(--inkt-zacht);white-space:nowrap}
+
+.groeptitel{margin:22px 0 11px;font-family:'Bricolage Grotesque',sans-serif;font-size:.92rem;font-weight:700;
+  color:var(--blauw);letter-spacing:.06em;text-transform:uppercase}
+.groeptitel em{font-style:normal;font-weight:400;color:var(--inkt-zacht);font-family:'Instrument Sans',sans-serif;
+  font-size:.83rem;letter-spacing:0;text-transform:none;margin-left:10px}
+
+.stalen{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:15px}
+.staal{cursor:pointer;font:inherit;text-align:left;padding:0;background:none;border:0}
+.staal .vlak{display:block;aspect-ratio:1;border-radius:3px;background-size:cover;background-position:center;
+  box-shadow:0 1px 3px rgba(0,0,0,.28), inset 0 0 0 1px rgba(0,0,0,.12);
+  position:relative;transition:transform .15s ease,box-shadow .15s ease}
+.staal:hover .vlak{transform:translateY(-2px);box-shadow:0 5px 12px rgba(0,0,0,.3), inset 0 0 0 1px rgba(0,0,0,.12)}
+.staal[aria-pressed="true"] .vlak{box-shadow:0 0 0 3px var(--inkt), 0 5px 12px rgba(0,0,0,.28)}
+.staal .spec{position:absolute;top:5px;right:5px;width:17px;height:17px;border-radius:50%;
+  background:#fff;color:#B06A18;font-size:.66rem;font-weight:800;display:grid;place-items:center;
+  box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.staal .ref{display:block;font-size:.72rem;font-weight:700;color:var(--blauw);margin-top:8px;letter-spacing:.04em}
+.staal .ral{display:block;font-size:.72rem;font-weight:600;color:#4B5B60;margin-top:1px}
+.staal .naam{display:block;font-size:.72rem;color:var(--inkt-zacht);line-height:1.3;margin-top:1px;text-transform:uppercase;letter-spacing:.02em}
+@media(max-width:560px){.stalen{grid-template-columns:repeat(auto-fill,minmax(94px,1fr));gap:12px}}
+
+.leeg{color:var(--inkt-zacht);font-size:.92rem;padding:20px 0}
+.kaart-voet{margin-top:20px;padding-top:16px;border-top:1px solid #E3E6E2;font-size:.8rem;color:var(--inkt-zacht);line-height:1.5}
+
+/* ── Paneel: modellen en kleuren ───────────────────────────── */
+.paneel{position:fixed;inset:0;z-index:200;background:var(--nacht);display:flex;flex-direction:column}
+.paneel[hidden]{display:none}
+.paneel-balk{flex:none;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:16px 24px;border-bottom:1px solid var(--lijn);background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px)}
+.paneel-balk strong{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:1.05rem;letter-spacing:-.02em}
+.paneel-sluit{width:40px;height:40px;border-radius:50%;border:1px solid var(--lijn);
+  background:#fff;color:var(--wit);font-size:1.6rem;line-height:1;cursor:pointer}
+.paneel-sluit:hover{background:#EAF1F9}
+.paneel-in{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.paneel-wrap{max-width:var(--maxw);margin:0 auto;padding:36px 24px 70px}
+.paneel-wrap h2{font-size:clamp(1.6rem,3.4vw,2.3rem)}
+.paneel-wrap > section:first-child,.paneel-wrap > h2:first-child{margin-top:0}
+body.paneel-open{overflow:hidden}
+
+/* ── Toonzaal ──────────────────────────────────────────────── */
+.keten{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px}
+.schakel{background:linear-gradient(160deg,#FFFFFF,#F6FAFE);border:1px solid var(--lijn);
+  border-radius:var(--rond);padding:28px;position:relative}
+.schakel:not(:last-child)::after{content:"";position:absolute;top:50%;right:-13px;z-index:2;
+  width:16px;height:16px;border-top:2px solid var(--koel);border-right:2px solid var(--koel);
+  transform:translateY(-50%) rotate(45deg)}
+.sch-rol{display:block;font-size:.72rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--koel);margin-bottom:9px}
+.schakel b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;
+  font-size:1.18rem;letter-spacing:-.02em;color:var(--wit);margin-bottom:9px}
+.schakel p{color:var(--zacht);font-size:.94rem;margin:0}
+.tz-titel{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;margin-bottom:14px}
+@media(max-width:940px){
+  .keten{grid-template-columns:1fr}
+  .schakel:not(:last-child)::after{top:auto;bottom:-13px;right:50%;transform:translateX(50%) rotate(135deg)}
+}
+.tz-foto{margin:0 0 30px;border-radius:var(--rond);overflow:hidden;border:1px solid var(--lijn);
+  box-shadow:0 18px 44px rgba(35,42,48,.18);background:#C9C8C6}
+.tz-foto img{width:100%;height:auto;display:block}
+.toonzaal{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:start}
+.tz-lijst{margin:22px 0 0;padding:0;list-style:none}
+.tz-lijst li{color:var(--zacht);font-size:.97rem;padding:11px 0;border-top:1px solid var(--lijn)}
+.tz-lijst li b{color:var(--wit);font-weight:600}
+.tz-kaart{background:linear-gradient(160deg,#FFFFFF,#F6FAFE);border:1px solid var(--lijn);
+  border-radius:var(--rond);padding:30px;position:sticky;top:90px}
+.tz-kop{display:block;font-size:.74rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--koel);margin-bottom:10px}
+.tz-kaart p{color:var(--zacht);font-size:.95rem}
+.tz-regel{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  margin:0;padding:11px 0;border-top:1px solid var(--lijn);font-size:.93rem}
+.tz-regel span{color:var(--zacht)}
+.tz-regel b{color:var(--wit);font-weight:600;text-align:right}
+.tz-uren{border-top:1px solid var(--lijn);padding:14px 0 4px}
+.uren-kop{display:block;font-size:.74rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--koel);margin-bottom:8px}
+.tz-uren span:not(.uren-kop){display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  font-size:.9rem;color:var(--zacht);padding:4px 0}
+.tz-uren span:not(.uren-kop) b{color:var(--wit);font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.tz-uren span.dicht{opacity:.5}
+.tz-uren span.dicht b{font-weight:500}
+.tz-kaart .knop{margin-top:20px;width:100%;text-align:center}
+.wa-zweef{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:9px;
+  padding:13px 19px 13px 15px;border-radius:999px;background:#25D366;color:#0B2E16;text-decoration:none;
+  font-weight:700;font-size:.93rem;box-shadow:0 10px 26px rgba(11,46,22,.28);transition:transform .15s ease}
+.wa-zweef svg{width:22px;height:22px;flex:none}
+.wa-zweef:hover{transform:translateY(-2px)}
+@media(max-width:560px){.wa-zweef span{display:none}.wa-zweef{padding:14px;right:14px;bottom:14px}}
+@media print{.wa-zweef{display:none}}
+@media(max-width:940px){.toonzaal{grid-template-columns:1fr;gap:28px}.tz-kaart{position:static}}
+
+/* ── Modellen ──────────────────────────────────────────────── */
+.modelraster{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.modelkaart{background:linear-gradient(160deg,#FFFFFF,#F6FAFE);
+  border:1px solid var(--lijn);border-radius:var(--rond);padding:28px}
+.modelkaart h3{margin-bottom:9px}
+.modelkaart p{color:var(--zacht);font-size:.95rem;margin:0}
+.modelkaart .tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--koel);margin-bottom:10px}
+@media(max-width:940px){.modelraster{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.modelraster{grid-template-columns:1fr}}
+
+/* ── Systeemblok ───────────────────────────────────────────── */
+.systeem{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.sys{background:linear-gradient(160deg,#FFFFFF,#F6FAFE);border:1px solid var(--lijn);border-radius:var(--rond);padding:26px}
+.sys h3{margin-bottom:10px}
+.sys p{color:var(--zacht);font-size:.97rem;margin:0}
+.sys ul{margin:16px 0 0;padding:0;list-style:none}
+.sys li{color:var(--zacht);font-size:.95rem;padding:9px 0;border-top:1px solid var(--lijn)}
+.sys li b{color:var(--wit);font-weight:600}
+@media(max-width:900px){.systeem{grid-template-columns:1fr}}
+
+/* ── Referenties ───────────────────────────────────────────── */
+.refs{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.ref{background:linear-gradient(160deg,#FFFFFF,#F6FAFE);border:1px solid var(--lijn);border-radius:var(--rond);overflow:hidden}
+.ref-beeld{position:relative;aspect-ratio:4/3;background:#C9C8C6;overflow:hidden;user-select:none}
+.ref-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ref-beeld .na{clip-path:inset(0 0 0 var(--split,50%))}
+.ref-greep{position:absolute;top:0;bottom:0;left:var(--split,50%);width:2px;background:var(--wit);z-index:3;pointer-events:none}
+.ref-greep::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:var(--wit);box-shadow:0 4px 18px rgba(0,0,0,.5)}
+.ref-schuif{position:absolute;inset:0;z-index:4;width:100%;margin:0;opacity:0;cursor:ew-resize}
+.ref-label{position:absolute;bottom:12px;z-index:3;font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(250,250,249,.92);padding:5px 11px;border-radius:100px;backdrop-filter:blur(6px)}
+.ref-label.l{left:12px}
+.ref-label.r{right:12px}
+.ref-tekst{padding:24px 26px 28px}
+.ref-tekst h3{margin-bottom:4px}
+.ref-plaats{color:var(--zacht);font-size:.9rem;margin:0 0 14px}
+.ref-tekst ul{margin:0;padding:0;list-style:none}
+.ref-tekst li{font-size:.93rem;color:var(--zacht);padding:8px 0;border-top:1px solid var(--lijn)}
+@media(max-width:820px){.refs{grid-template-columns:1fr}}
+
+/* ── Aanbod ────────────────────────────────────────────────── */
+.fiche{width:100%;border-collapse:collapse;font-size:1rem}
+.fiche th{text-align:left;font-weight:600;font-size:.85rem;color:var(--zacht);padding:0 18px 14px 0;border-bottom:1px solid var(--lijn)}
+.fiche td{padding:14px 16px 14px 0;border-bottom:1px solid var(--lijn);vertical-align:top;color:var(--zacht)}
+.fiche td:first-child{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.1rem;color:var(--wit);width:30%;letter-spacing:-.02em}
+.fiche tr:hover td{color:var(--wit)}
+@media(max-width:760px){
+  .fiche,.fiche tbody,.fiche tr,.fiche td{display:block;width:100%!important}
+  .fiche thead{display:none}
+  .fiche tr{border-bottom:1px solid var(--lijn);padding:16px 0}
+  .fiche td{border:0;padding:3px 0}
+}
+
+/* ── Bento ─────────────────────────────────────────────────── */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.vak{background:linear-gradient(160deg,#FFFFFF,#F6FAFE);border:1px solid var(--lijn);border-radius:var(--rond);padding:24px}
+.vak p{color:var(--zacht);font-size:.95rem;margin:10px 0 0}
+.vak-breed{grid-column:span 4;background:linear-gradient(100deg,rgba(58,149,225,.14),rgba(25,117,185,.1));border-color:rgba(25,117,185,.26)}
+.vak-breed h3{font-size:1.45rem;font-weight:800;letter-spacing:-.03em}
+.vak-breed p{font-size:1rem;max-width:74ch}
+@media(max-width:1000px){.bento{grid-template-columns:1fr 1fr}.vak-breed{grid-column:span 2}}
+@media(max-width:620px){.bento{grid-template-columns:1fr}.vak-breed{grid-column:span 1}}
+
+/* ── Stappen ───────────────────────────────────────────────── */
+.stappen{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.stap{counter-increment:s;padding-top:20px;border-top:2px solid;border-image:none;border-top-color:var(--koel)}
+.stap::before{content:"0" counter(s);display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:.95rem;font-weight:800;margin-bottom:10px;color:var(--koel)}
+.stap p{color:var(--zacht);font-size:.95rem;margin:9px 0 0}
+@media(max-width:900px){.stappen{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stappen{grid-template-columns:1fr}}
+
+/* ── FAQ ───────────────────────────────────────────────────── */
+.faq details{border-bottom:1px solid var(--lijn)}
+.faq summary{cursor:pointer;padding:17px 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.12rem;letter-spacing:-.02em;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;font-size:1.6rem;line-height:1;color:var(--koel)}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 0 18px;margin:0;max-width:70ch;color:var(--zacht);font-size:.99rem}
+
+/* ── Contact ───────────────────────────────────────────────── */
+.contact-kaart{background:linear-gradient(160deg,#FFFFFF,#F6FAFE);border:1px solid var(--lijn);border-radius:var(--rond);padding:clamp(30px,4vw,54px);backdrop-filter:blur(14px);position:relative;overflow:hidden}
+.contact-kaart::before{content:"";position:absolute;top:-60%;right:-20%;width:60%;height:180%;filter:blur(90px);opacity:.32;background:radial-gradient(circle,var(--koel),transparent 68%)}
+.contact-grid{position:relative;z-index:2;display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.contact-info a{font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.contact-lijn{margin-top:26px;padding-top:26px;border-top:1px solid var(--lijn);color:var(--zacht);font-size:.97rem}
+form{display:grid;gap:15px}
+.rij{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+label{display:block;font-size:.85rem;font-weight:600;margin-bottom:7px;color:var(--zacht)}
+input,select,textarea{width:100%;padding:13px 15px;border:1px solid var(--lijn);border-radius:13px;
+  background:#fff;color:var(--wit);font:inherit;font-size:.97rem}
+input::placeholder,textarea::placeholder{color:#8A9299}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--koel);outline-offset:1px;background:#fff}
+select option{background:#fff;color:var(--wit)}
+textarea{min-height:112px;resize:vertical}
+.tip{padding:14px 16px;border-radius:13px;background:rgba(214,158,74,.16);border:1px solid rgba(180,130,60,.4);font-size:.9rem;color:#5A4526;display:none}
+.tip.zichtbaar{display:block}
+.melding{padding:15px;border-radius:13px;background:rgba(25,117,185,.1);border:1px solid rgba(25,117,185,.3);font-size:.94rem;display:none}
+.melding.zichtbaar{display:block}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:40px}.rij{grid-template-columns:1fr}}
+
+/* ── Footer ────────────────────────────────────────────────── */
+footer{border-top:1px solid var(--lijn);color:var(--zacht);font-size:.88rem;padding:32px 0}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+.foot-klein{width:100%;font-size:.76rem;color:#6E777D;max-width:82ch;line-height:1.5}
+
+:focus-visible{outline:2px solid var(--koel);outline-offset:3px}
+</style>
+</head>
+
+<body>
+
+<a class="logoband breed" id="bandBreed" href="#top" aria-label="Window-Line — naar boven"></a>
+<a class="logoband smal"  id="bandSmal"  href="#top" aria-label="Window-Line — naar boven"></a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="merk" href="#top" id="merkTekst"></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#verkoop">Hoe het werkt</a>
+      <a href="#catalogus" data-paneel>Modellen &amp; kleuren</a>
+      <a href="#toonzaal" id="navTz">Partner &amp; toonzaal</a>
+      
+      <a href="#realisaties">Realisaties</a>
+      <a href="#systeem">Techniek</a>
+      <a href="#referenties" id="navRef" class="verborgen">Projecten</a>
+      <a href="#aanbod">Aanbod</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a class="knop" href="#offerte">Prijs aanvragen</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="licht" aria-hidden="true"></div>
+  <div class="hero-in">
+    <div>
+      <h1 id="heroTitel"></h1>
+      <p class="lead" id="heroOpening"></p>
+      <div class="hero-acties">
+        <a class="knop" href="#offerte">Prijs aanvragen</a>
+        <a class="knop knop-glas" href="#catalogus" data-paneel>Modellen en kleuren</a>
+      </div>
+    </div>
+    <figure class="hero-foto" id="heroKader">
+      <img id="heroBeeld" alt="Window-Line — ramen en deuren" loading="eager" decoding="async">
+      <span class="streek" aria-hidden="true"></span>
+    </figure>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-spoor">
+    <span>Draai-kipramen</span><span>Hefschuifdeuren</span><span>Voordeuren</span><span>Hoogrendementsglas</span><span>Rolluiken</span><span>Screens</span><span>Vaste ramen</span>
+    <span>Draai-kipramen</span><span>Hefschuifdeuren</span><span>Voordeuren</span><span>Hoogrendementsglas</span><span>Rolluiken</span><span>Screens</span><span>Vaste ramen</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="cijfers">
+      <div class="cijfer"><b data-cfg="REACTIETERMIJN"></b><span>Prijs op basis van je maten of je plan, zonder plaatsbezoek.</span></div>
+      <div class="cijfer"><b>Alles op maat</b><span>Elk raam wordt gemaakt op jouw afmetingen, in de kleur die jij kiest.</span></div>
+      <div class="cijfer"><b id="aantalKleuren">—</b><span>Kleuren in folie: uniforme tinten, houtstructuren en metallics.</span></div>
+      <div class="cijfer"><b>Stalen</b><span data-showroom></span></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="verkoop">
+  <div class="wrap">
+    <h2>Wij leveren. Een vakman uit je buurt plaatst.</h2>
+    <p class="lead" style="margin-bottom:30px">Je schrijnwerk komt van ons, het vakwerk van iemand bij jou in de streek.</p>
+
+    <div class="drieluik">
+      <div class="luik">
+        <span class="nr">1</span>
+        <h3>Je hebt een vakman</h3>
+        <p>Een aannemer die al bij je werkt, je eigen schrijnwerker, of een zelfstandige plaatser uit je gemeente. Heb je er geen, dan brengen wij je in contact met iemand in je buurt.</p>
+      </div>
+      <div class="luik">
+        <span class="nr">2</span>
+        <h3>Je koopt bij ons</h3>
+        <p>Op maat gemaakt, in het model en de kleur die je kiest, geleverd bij je thuis of rechtstreeks op de werf. Prijs binnen <span data-cfg="REACTIETERMIJN"></span>.</p>
+      </div>
+      <div class="luik">
+        <span class="nr">3</span>
+        <h3>Hij plaatst ze</h3>
+        <p>Iemand uit je eigen streek, die je kan aanspreken en die blijft. Hij factureert je rechtstreeks voor zijn uren, zodat je altijd weet wie waarvoor instaat.</p>
+      </div>
+    </div>
+
+    <div class="uitleg">
+      <div>
+        <h3>Waarom dat scheelt in de prijs</h3>
+        <p>Wij kopen in via <span data-tz-partner></span>, <span data-partner-sterkte></span>. Door dat volume liggen de inkoopvoorwaarden bij de fabrikant een stuk beter dan bij een kleine plaatser, en dat verschil geven wij door. Daarbovenop: een leverancier die ook plaatst, heeft een ploeg in dienst. Die kost vast geld, ook in een stille maand, en dat zit verwerkt in elke prijs die hij geeft. Wij hebben die kost niet, dus jij betaalt hem niet. Daardoor kom je tot <span data-besparing></span> lager uit <span data-vergelijking></span>, bij hetzelfde schrijnwerk.</p>
+      </div>
+      <div>
+        <h3>Reken het eerlijk door</h3>
+        <p>Vraag je plaatser wat hij vraagt om te plaatsen, en tel dat bij onze prijs. Vergelijk dat totaal met je andere offerte. Vraag ook na welk btw-tarief op jouw situatie van toepassing is: bij een renovatie kan het verschil groot zijn naargelang wie bestelt en wie factureert.</p>
+      </div>
+      <div class="geen">
+        <h3>Nog geen plaatser?</h3>
+        <p>Zet het erbij in je prijsaanvraag. We brengen je in contact met een zelfstandige uit je regio die we kennen van eerdere dossiers. Hij maakt zijn eigen prijs en factureert rechtstreeks aan jou.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="toonzaal">
+  <div class="wrap">
+    <h2>Kom gerust eens langs in de toonzaal</h2>
+    <p class="lead" style="margin-bottom:26px">Je bent welkom bij <span data-tz-partner></span>, onze partner waar je alle modellen ziet staan, stalen kan vastnemen en je vragen kwijt kan. Je kan er ook je bestelling plaatsen — die wordt daar gewoon onder <span data-cfg="BEDRIJFSNAAM"></span> opgenomen, aan dezelfde prijs als bij ons.</p>
+
+    <div class="keten">
+      <div class="schakel">
+        <span class="sch-rol">Jouw aanspreekpunt</span>
+        <b data-cfg="BEDRIJFSNAAM"></b>
+        <p>Wij maken je prijs, volgen je bestelling op en zorgen dat alles op tijd geleverd is. Eén nummer, van je eerste vraag tot de levering.</p>
+      </div>
+      <div class="schakel">
+        <span class="sch-rol">Toonzaal en advies</span>
+        <b data-tz-partner></b>
+        <p>Hier zie je de modellen in het echt, krijg je technisch advies en kan je bestellen onder onze naam. Hun inkooppositie bij de fabrikant is de reden dat onze prijzen kunnen.</p>
+      </div>
+      <div class="schakel">
+        <span class="sch-rol">Plaatsing</span>
+        <b>Een vakman uit je buurt</b>
+        <p>Je eigen aannemer of schrijnwerker, of een zelfstandige plaatser die wij je aanbrengen. Hij factureert rechtstreeks aan jou.</p>
+      </div>
+    </div>
+
+    <figure class="tz-foto" id="tzFoto">
+      <img id="tzBeeld" alt="" loading="lazy" decoding="async">
+    </figure>
+
+    <div class="toonzaal">
+      <div>
+        <h3 class="tz-titel">Wat je er kan zien</h3>
+        <p class="lead">Een kleur op een scherm is iets anders dan een staal in je hand, en een profiel voelt pas echt als je het vastneemt. In de toonzaal staan de verschillende raamtypes opgesteld: draai-kipramen, schuifdeuren, voordeuren en de volledige kleurenwaaier.</p>
+        <p class="lead">Je kan er ook terecht voor technische vragen over profielen, beglazing en uitvoeringen. Werk je aan een volledige renovatie, dan zie je er meteen ook verwarming, badkamers en binnenafwerking staan.</p>
+        <ul class="tz-lijst">
+          <li><b>Je ziet de modellen naast elkaar</b> in plaats van op een scherm</li>
+          <li><b>Stalen in de hand</b>, zodat je de kleur en de structuur echt kan beoordelen</li>
+          <li><b>Technische uitleg</b> over isolatie, beslag en beglazing</li>
+          <li><b>Je bestelling plaatsen of nakijken</b>, onder <span data-cfg="BEDRIJFSNAAM"></span> en aan dezelfde prijs</li>
+        </ul>
+      </div>
+      <aside class="tz-kaart">
+        <span class="tz-kop">Bezoek plannen</span>
+        <p>Bel of mail ons even voor je langsgaat, dan maken we de afspraak en zorgen we dat ze je verwachten met je dossier erbij. Wil je ter plaatse bestellen, dan kan dat ook.</p>
+        <p class="tz-regel"><span>Toonzaal</span><b data-tz-naam></b></p>
+        <p class="tz-regel" data-tz-adres-rij><span>Adres</span><b data-tz-adres></b></p>
+        <p class="tz-regel" data-tz-kaart-rij><span>Route</span><b><a data-tz-kaart href="#" target="_blank" rel="noopener">Op de kaart</a></b></p>
+        <div class="tz-uren" id="tzUren"></div>
+        <p class="tz-regel"><span>Afspraak via</span><b data-cfg="TELEFOON"></b></p>
+        <p class="tz-regel" data-wa-rij><span>Of WhatsApp</span><b><a data-wa href="#" target="_blank" rel="noopener">Stuur een bericht</a></b></p>
+        <a class="knop" href="#offerte">Afspraak aanvragen</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="realisaties">
+  <div class="wrap">
+    <h2>Geplaatst en geleverd</h2>
+    <p class="lead" style="margin-bottom:40px">Projecten in verschillende kleuren en uitvoeringen. Klik een foto aan om ze groot te bekijken.</p>
+    <div class="galerij" id="galerij"></div>
+  </div>
+</section>
+
+<dialog id="lichtbak" aria-label="Foto groot bekijken">
+  <button class="sluit" id="sluitKnop" aria-label="Sluiten">&times;</button>
+  <img id="lichtbakBeeld" alt="">
+  <p id="lichtbakTekst"></p>
+</dialog>
+
+<section id="systeem">
+  <div class="wrap">
+    <h2>Wat er in het profiel zit</h2>
+    <p class="lead" data-systeem-lead></p>
+    <div class="systeem">
+      <div class="sys">
+        <h3 data-sys-pvc-titel></h3>
+        <p>Het pvc-platform voor het gros van de raamopeningen: draai-kipramen, vaste ramen, voordeuren en achterdeuren.</p>
+        <ul>
+          <li><b>Glasvezel in plaats van staal</b> in de vleugel, waardoor de koudebrug van de staalversterking wegvalt</li>
+          <li><b>Versterkte kaders</b> op basis van staaldraadversterkt pvc-hardschuim, lichter te verwerken en beter isolerend</li>
+          <li><b>Centrale middendichting</b> voor wind- en waterdichtheid</li>
+          <li><b>Meerdere vleugeldesigns</b> van strak tot afgerond, zodat het bij je woning past</li>
+        </ul>
+      </div>
+      <div class="sys">
+        <h3 data-sys-alu-titel></h3>
+        <p>Aluminium voor waar het pvc niet kan: grote schuifpuien, brede glaspartijen en smalle zichtlijnen.</p>
+        <ul>
+          <li><b>Slanke zichtlijnen</b> voor meer glasoppervlak bij dezelfde opening</li>
+          <li><b>Schuif- en hefschuifsystemen</b> voor terras- en tuinaansluitingen</li>
+          <li><b>Stalen-look uitvoeringen</b> voor minimalistische renovaties</li>
+          <li><b>Zelfde kleur als het pvc</b> mogelijk, zodat alles er als één geheel uitziet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="referenties" class="verborgen">
+  <div class="wrap">
+    <h2>Uitgevoerde projecten</h2>
+    <p class="lead" style="margin-bottom:30px">Elk project met de gegevens erbij: model, kleur, beglazing en de tijd tussen bestelling en levering.</p>
+    <div class="refs" id="refs"></div>
+  </div>
+</section>
+
+<section id="aanbod">
+  <div class="wrap">
+    <h2>Wat we leveren</h2>
+    <p class="lead" style="margin-bottom:30px">Alles op maat gemaakt, voor renovatie en nieuwbouw.</p>
+    <table class="fiche">
+      <thead><tr><th>Product</th><th>Uitvoering</th><th>Typisch gebruikt voor</th></tr></thead>
+      <tbody>
+        <tr><td>Draai-kipramen</td><td data-u-pvc></td><td>Volledige raamvervanging bij renovatie</td></tr>
+        <tr><td>Vaste ramen</td><td data-u-beide></td><td>Grote lichtpartijen, trappenhallen</td></tr>
+        <tr><td>Schuif- en hefschuifdeuren</td><td data-u-alu></td><td>Terras- en tuinaansluitingen</td></tr>
+        <tr><td>Voordeuren</td><td data-u-beide></td><td>Woningen en appartementsblokken</td></tr>
+        <tr><td>Achterdeuren</td><td data-u-pvc></td><td>Bergingen, garages, achterbouw</td></tr>
+        <tr><td>Rolluiken en luiken</td><td>aluminium en pvc</td><td>Voorzet bij renovatie, ingebouwd bij nieuwbouw</td></tr>
+        <tr><td>Beglazing</td><td>hoogrendement, triple, veiligheidsglas</td><td>Per opening te bepalen</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="voorwie">
+  <div class="wrap">
+    <h2>Voor wie dit is</h2>
+    <p class="lead" style="margin-bottom:30px">Iedereen kan bij ons bestellen. Wat je nodig hebt, is iemand die de ramen plaatst.</p>
+    <div class="bento">
+      <div class="vak">
+        <h3>Je verbouwt zelf</h3>
+        <p>Je bent bezig met je woning en je aannemer of schrijnwerker plaatst de ramen mee. Jij regelt de ramen, hij zet ze erin.</p>
+      </div>
+      <div class="vak">
+        <h3>Aannemers en schrijnwerkers</h3>
+        <p>Je plaatst zelf en wil het schrijnwerk correct op maat en op tijd op de werf.</p>
+      </div>
+      <div class="vak">
+        <h3>Zelfstandige plaatsers</h3>
+        <p>Je koopt in, plaatst, en factureert je klant zelf. Wij leveren en blijven uit je relatie met hem.</p>
+      </div>
+      <div class="vak">
+        <h3>Vastgoed en renovatie</h3>
+        <p>Meerdere panden, dezelfde ingreep. Eén prijs per dossier, dezelfde tarieven over je hele portefeuille.</p>
+      </div>
+      <div class="vak vak-breed">
+        <h3>Liever een vakman uit de streek dan een ploeg van ver</h3>
+        <p>Wij houden geen plaatsingsploeg in dienst. Die kost vast geld, ook in een stille maand, en dat zit bij de meeste leveranciers in elke prijs verwerkt. In de plaats daarvan werk je met iemand uit je eigen gemeente: korte lijnen tijdens de werken, en iemand die je nadien nog kan bereiken. Heb je nog geen plaatser, zeg het erbij in je aanvraag.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="werkwijze">
+  <div class="wrap">
+    <h2>Van maten tot levering</h2>
+    <p class="lead" style="margin-bottom:30px">Vier stappen, in deze volgorde. Je weet altijd waar je dossier zit.</p>
+    <div class="stappen">
+      <div class="stap"><h3>Je stuurt je maten door</h3><p>Een plan, een foto met maten of een simpele opsomming van de openingen volstaat om te starten.</p></div>
+      <div class="stap"><h3>Prijs binnen <span data-cfg="REACTIETERMIJN"></span></h3><p>Prijs per opening en een totaal, met model, kleurreferentie en beglazing erbij.</p></div>
+      <div class="stap"><h3>Staal en bestelling</h3><p>Je keurt het fysieke kleurstaal goed, de definitieve maten worden vastgelegd en het gaat in productie.</p></div>
+      <div class="stap"><h3>Levering</h3><p>Op de afgesproken dag, bij jou thuis of op de werf.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="vragen">
+  <div class="wrap">
+    <h2>Veelgestelde vragen</h2>
+    <div class="faq" style="margin-top:36px">
+      <details><summary>Kan ik als particulier bij jullie bestellen?</summary><p>Ja. Iedereen kan bij ons bestellen: particulieren, aannemers, plaatsers en bedrijven. Je hebt enkel iemand nodig die de ramen plaatst, want dat doen wij niet.</p></details>
+      <details open><summary>Laat je aannemer bestellen en het kan je btw schelen</summary><p>Bij renovatie van een voldoende oude woning geldt vaak een verlaagd btw-tarief, maar dat hangt aan werk in onroerende staat: levering én plaatsing, samen gefactureerd door de aannemer aan jou. Koop je de ramen zelf rechtstreeks, dan betaal je daar het gewone tarief op en enkel de plaatsingsuren vallen lager. Bestelt je aannemer ze en zet hij alles op één factuur, dan kan het geheel onder het verlaagd tarief vallen. Vraag het na bij je aannemer of je boekhouder voor je bestelt — het verschil loopt bij een volledige woning al snel op.</p></details>
+      <details><summary>Klopt de kleur op jullie site?</summary><p>Bij benadering, en dat is geen slag om de arm. Elk scherm geeft kleuren anders weer en een folie heeft een structuur die een afbeelding niet volledig kan tonen. Daarom is de kleur pas definitief nadat je een fysiek staal hebt goedgekeurd. Kom ze bekijken of vraag ze aan.</p></details>
+      <details><summary>Wie plaatst de ramen?</summary><p>Een vakman uit je eigen buurt: je aannemer, je schrijnwerker, of een zelfstandige plaatser die wij je aanbrengen. Wij houden zelf geen ploeg in dienst, en die kost zit dus ook niet in onze prijs. De plaatser maakt zijn eigen prijs en factureert rechtstreeks aan jou, zodat je weet wie waarvoor instaat: wij voor het schrijnwerk, hij voor de plaatsing.</p></details>
+      <details><summary>Kan ik in de toonzaal bestellen?</summary><p>Ja. Je bestelling wordt daar opgenomen onder <span data-cfg="BEDRIJFSNAAM"></span>, aan dezelfde prijs als wanneer je ons rechtstreeks contacteert. Je krijgt de bevestiging van ons, met de maten, het model en de kleurreferentie erop, voor er iets in productie gaat.</p></details>
+      <details><summary>Hoe neem ik de maten op?</summary><p>Voor een eerste prijs volstaan de maten van de dagopening, breedte bij hoogte, met een foto erbij. De definitieve maten worden vastgelegd voor de bestelling in productie gaat, want daar kan achteraf niets meer aan veranderen.</p></details>
+      <details><summary>Welk model moet ik kiezen?</summary><p>Voor een gewone woning volstaat het standaardmodel. Wil je smalle zichtlijnen en veel glas, dan kom je bij het vlakke design uit. Bij een pand met karakter werkt de afgeronde of de decoratieve uitvoering beter. Het model staat altijd op de offerte, zodat je appels met appels vergelijkt.</p></details>
+      <details><summary>Wat is het verschil tussen standaard en specials?</summary><p>Specials zijn de bijzondere afwerkingen: extra matte folies, bepaalde houtstructuren en metallics. Ze kunnen een meerprijs en een langere levertermijn hebben. Dat staat altijd op je offerte voor je bestelt.</p></details>
+      <details><summary>Hoe lang duurt de levering?</summary><p>Dat hangt af van model, kleur en beglazing. Je krijgt bij de offerte een concrete termijn, geen ruwe schatting.</p></details>
+      <details><summary>Welke garantie krijg ik?</summary><p>De fabrieksgarantie op profielen, beglazing en beslag loopt volgens de voorwaarden van de fabrikant, en als particulier heb je daarbovenop de wettelijke garantie van twee jaar. De voorwaarden zitten bij de offerte, zodat je ze kan nalezen voor je tekent. Voor de plaatsing zelf sta je in verbinding met je plaatser — hij voert ze uit en geeft er zijn garantie op.</p></details>
+      <details><summary>Kan ik een bestelling nog annuleren?</summary><p>Zodra de productie start niet meer. Alles wordt op jouw maten gemaakt en is daarna niet meer aan iemand anders te leveren. Om die reden geldt bij maatwerk ook geen herroepingsrecht. We bevestigen daarom altijd eerst de maten, de kleur en het model voor we bestellen.</p></details>
+    </div>
+  </div>
+</section>
+
+<a class="wa-zweef" id="waZweef" data-wa href="#" target="_blank" rel="noopener" aria-label="Stuur ons een WhatsApp-bericht">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24m-2.6 4.1c-.17 0-.44.06-.67.31s-.88.86-.88 2.1.9 2.43 1.03 2.6c.12.16 1.76 2.7 4.28 3.78.6.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.19.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28s-1.47-.73-1.7-.81c-.22-.08-.39-.12-.55.12s-.63.8-.78.97c-.14.16-.28.19-.53.06a6.8 6.8 0 0 1-2-1.24 7.5 7.5 0 0 1-1.38-1.72c-.15-.25-.02-.38.11-.5.11-.12.25-.3.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.41-.55-.42z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<section id="offerte">
+  <div class="wrap">
+    <div class="contact-kaart">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Prijs aanvragen</h2>
+          <p class="lead">Stuur je maten of je plan door en je krijgt een prijs binnen <span data-cfg="REACTIETERMIJN"></span>. Vrijblijvend.</p>
+          <div class="contact-lijn">
+            <p>Telefoon<br><a data-cfg="TELEFOON" data-href-tel="1" href="#"></a></p>
+            <p data-wa-rij>WhatsApp<br><a data-wa href="#" target="_blank" rel="noopener">Stuur een bericht</a></p>
+            <p>E-mail<br><a data-cfg="EMAIL" data-href-mail="1" href="#"></a></p>
+            <p>Werkgebied<br><span data-cfg="WERKGEBIED"></span> en omstreken</p>
+            <p style="margin:0" data-showroom-rij>Stalen bekijken<br><span data-showroom></span></p>
+          </div>
+        </div>
+
+        <form id="offerteForm" novalidate>
+          <div class="melding" id="melding" role="status"></div>
+          <div class="rij">
+            <div><label for="naam">Naam</label><input id="naam" name="naam" required placeholder="Voor- en achternaam"></div>
+            <div><label for="soort">Ik ben</label>
+              <select id="soort" name="soort">
+                <option>Particulier</option>
+                <option>Aannemer of schrijnwerker</option>
+                <option>Zelfstandige plaatser</option>
+                <option>Vastgoed of renovatiebedrijf</option>
+              </select>
+            </div>
+          </div>
+          <div class="tip" id="btwTip">
+            Laat je aannemer de bestelling plaatsen als hij de ramen ook zet. Dat kan je btw schelen bij een renovatie. Vraag het na bij hem of bij je boekhouder.
+          </div>
+          <div class="rij">
+            <div><label for="email">E-mail</label><input id="email" name="email" type="email" required placeholder="jij@voorbeeld.be"></div>
+            <div><label for="tel">Telefoon</label><input id="tel" name="telefoon" placeholder="04xx xx xx xx"></div>
+          </div>
+          <div class="rij">
+            <div><label for="bedrijf">Bedrijf <span style="font-weight:400">(optioneel)</span></label><input id="bedrijf" name="bedrijf" placeholder="Laat leeg als particulier"></div>
+            <div><label for="locatie">Gemeente van het project</label><input id="locatie" name="locatie" placeholder="Bijvoorbeeld Boom"></div>
+          </div>
+          <div class="rij">
+            <div><label for="aantal">Aantal openingen</label><input id="aantal" name="aantal" placeholder="Bijvoorbeeld 12"></div>
+            <div><label for="wiedoet">Wie plaatst</label>
+              <select id="wiedoet" name="plaatsing">
+                <option>Mijn aannemer</option>
+                <option>Eigen ploeg</option>
+                <option>Ik plaats zelf</option>
+                <option>Nog geen plaatser — graag een voorstel</option>
+              </select>
+            </div>
+          </div>
+          <div class="rij">
+            <div><label for="modelkeuze">Model</label><select id="modelkeuze" name="model"></select></div>
+            <div><label for="kleurkeuze">Kleur</label><input id="kleurkeuze" name="kleur" placeholder="Wordt ingevuld via de kleurenkaart"></div>
+          </div>
+          <div><label for="timing">Wanneer moet het geleverd zijn</label><input id="timing" name="timing" placeholder="Bijvoorbeeld: eind november"></div>
+          <div><label for="bericht">Maten en details</label><textarea id="bericht" name="bericht" placeholder="Maten per opening (breedte x hoogte), type woning, bouwjaar, bijzonderheden. Plan of foto's meesturen kan per mail."></textarea></div>
+          <div><button class="knop" type="submit">Prijsaanvraag versturen</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="paneel" id="catalogus" hidden>
+  <div class="paneel-balk">
+    <strong>Modellen &amp; kleuren</strong>
+    <button class="paneel-sluit" id="catSluit" aria-label="Sluiten">&times;</button>
+  </div>
+  <div class="paneel-in">
+    <div class="paneel-wrap">
+<h2>De modellen</h2>
+    <p class="lead" style="margin-bottom:30px">Zes uitvoeringen dekken zo goed als elk dossier. Het model staat altijd op je offerte, zodat je offertes onderling kan vergelijken.</p>
+    <div class="modelraster" id="modelraster"></div>
+
+<h2>Het kleurengamma</h2>
+    <p class="lead" style="margin-bottom:26px">Alle folies met hun referentienummer. Zoek op naam, nummer of RAL-code.</p>
+
+    <div class="kaart">
+      <div class="gekozen">
+        <div class="gekozen-vlak" id="gekozenVlak"></div>
+        <div class="gekozen-tekst">
+          <span class="gekozen-kop">Gekozen kleur</span>
+          <b id="gekozenNaam"></b>
+          <span id="gekozenRef"></span>
+        </div>
+      </div>
+
+      <div class="groepknoppen" id="groepknoppen" role="group" aria-label="Kleurgroep"></div>
+      <div class="zoekrij">
+        <input class="zoek" id="zoek" type="search" placeholder="Zoek in alle kleuren — bv. antraciet, 103 of 7016" aria-label="Zoek een kleur">
+        <span class="telling" id="telling"></span>
+      </div>
+      <div id="kleurenLijst"></div>
+      <p class="kaart-voet">
+        De weergave op je scherm is indicatief en niet bindend. Elk scherm geeft kleuren anders weer, en een folie oogt in het echt anders dan een afbeelding. Kom ze bekijken in de toonzaal of vraag stalen aan voor je vastlegt — de kleur wordt pas definitief na goedkeuring van een fysiek staal. Stalen met een sterretje zijn specials en kunnen een meerprijs en een langere levertermijn hebben.
+      </p>
+    </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-in">
+    <div><span data-cfg="BEDRIJFSNAAM"></span> — <span data-cfg="SLOGAN"></span></div>
+    <div><a data-cfg="EMAIL" data-href-mail="1" href="#"></a></div>
+    <div class="foot-klein">
+      <span data-cfg="BEDRIJFSNAAM"></span>, <span data-cfg="ADRES_VOLLEDIG"></span> · btw <span data-cfg="BTW_NUMMER"></span>
+      · Kleurweergave op deze site is indicatief en niet bindend; de kleur wordt definitief na goedkeuring van een fysiek staal. Prijzen voor particulieren worden meegedeeld inclusief btw.
+      <span data-merk-disclaimer></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const KLEURFOTOS = {"143": "fotos/143.webp", "047": "fotos/047.webp", "109": "fotos/109.webp", "110": "fotos/110.webp", "144": "fotos/144.webp", "154": "fotos/154.webp", "026": "fotos/026.webp", "025": "fotos/025.webp", "353": "fotos/353.webp", "333": "fotos/333.webp", "351": "fotos/351.webp", "309": "fotos/309.webp", "305": "fotos/305.webp", "303": "fotos/303.webp", "304": "fotos/304.webp", "694": "fotos/694.webp", "663": "fotos/663.webp", "346": "fotos/346.webp", "342": "fotos/342.webp", "658": "fotos/658.webp", "925": "fotos/925.webp", "116": "fotos/116.webp", "247": "fotos/247.webp", "687": "fotos/687.webp", "358": "fotos/358.webp", "329": "fotos/329.webp", "625": "fotos/625.webp", "649": "fotos/649.webp", "911": "fotos/911.webp", "627": "fotos/627.webp", "657": "fotos/657.webp", "678": "fotos/678.webp", "044": "fotos/044.webp", "347": "fotos/347.webp", "103": "fotos/103.webp", "048": "fotos/048.webp", "124": "fotos/124.webp", "043": "fotos/043.webp", "019": "fotos/019.webp", "096": "fotos/096.webp", "907": "fotos/907.webp", "409": "fotos/409.webp", "665": "fotos/665.webp", "004": "fotos/004.webp", "114": "fotos/114.webp", "068": "fotos/068.webp", "667": "fotos/667.webp", "072": "fotos/072.webp", "008": "fotos/008.webp", "085": "fotos/085.webp", "690": "fotos/690.webp", "012": "fotos/012.webp", "076": "fotos/076.webp", "079": "fotos/079.webp", "006": "fotos/006.webp"};
+
+</script>
+
+<script>
+const BEELDEN = {"logo-plaat": "fotos/logo-plaat.webp",
+"muur-korrel": "fotos/muur-korrel.webp",
+"leefruimte-keuken-zwart": "fotos/leefruimte-keuken-zwart.webp",
+"schuifpui-tuinzicht": "fotos/schuifpui-tuinzicht.webp",
+"raam-drievleugel-antraciet": "fotos/raam-drievleugel-antraciet.webp", "schuifdeur-antraciet-terras": "fotos/schuifdeur-antraciet-terras.webp", "hoekschuifdeur-antraciet": "fotos/hoekschuifdeur-antraciet.webp", "raam-tweevleugel-antraciet": "fotos/raam-tweevleugel-antraciet.webp", "gevel-topgevel-grijs": "fotos/gevel-topgevel-grijs.webp", "raam-smal-grijs": "fotos/raam-smal-grijs.webp", "vast-raam-zandkleur": "fotos/vast-raam-zandkleur.webp", "detail-profiel-zandkleur": "fotos/detail-profiel-zandkleur.webp", "gevel-houtdecor": "fotos/gevel-houtdecor.jpg", "raam-houtdecor": "fotos/raam-houtdecor.webp", "voordeur-zwart": "fotos/voordeur-zwart.webp", "voordeur-detail-zwart": "fotos/voordeur-detail-zwart.webp", "gevel-voordeur-garage": "fotos/gevel-voordeur-garage.webp", "toonzaal": "fotos/toonzaal.webp"};
+
+</script>
+
+<script>
+(function(){
+  var C = INSTELLINGEN, root = document.documentElement;
+  var B = (typeof BEELDEN !== 'undefined') ? BEELDEN : {};
+  var FOTOS = (typeof KLEURFOTOS !== 'undefined' && C.TOON_STAALFOTOS) ? KLEURFOTOS : {};
+  root.style.setProperty('--nacht', C.SITE_GRIJS);
+  if (C.BLAUWE_SCHIJN) document.body.classList.add('schijn');
+  if (C.TOON_BETON && typeof BEELDEN !== 'undefined' && BEELDEN['beton']){
+    document.body.classList.add('beton');
+    document.body.style.backgroundImage = 'url(' + BEELDEN['beton'] + ')';
+    document.body.style.backgroundSize  = C.BETON_SCHAAL + ' ' + C.BETON_SCHAAL;
+  }
+  root.style.setProperty('--warm', C.LOGO_BLAUW);
+  root.style.setProperty('--koel', C.LOGO_DIEP);
+
+  document.querySelectorAll('[data-cfg]').forEach(function(el){
+    var k = el.getAttribute('data-cfg');
+    if (C[k] !== undefined) el.textContent = C[k];
+    if (el.hasAttribute('data-href-tel'))  el.setAttribute('href','tel:'+C.TELEFOON_LINK);
+    if (el.hasAttribute('data-href-mail')) el.setAttribute('href','mailto:'+C.EMAIL);
+  });
+  document.title = C.BEDRIJFSNAAM + ' — ' + C.SLOGAN;
+
+  /* WhatsApp: leeg nummer = elke knop en elke rij verdwijnt */
+  var waNr = (C.WHATSAPP || '').replace(/[^0-9]/g, '');
+  if (waNr){
+    var waUrl = 'https://wa.me/' + waNr +
+                (C.WHATSAPP_TEKST ? '?text=' + encodeURIComponent(C.WHATSAPP_TEKST) : '');
+    document.querySelectorAll('[data-wa]').forEach(function(a){ a.href = waUrl; });
+    if (C.WHATSAPP_ZWEEF === false){
+      var z = document.getElementById('waZweef'); if (z) z.remove();
+    }
+  } else {
+    document.querySelectorAll('[data-wa-rij], #waZweef').forEach(function(e){ e.remove(); });
+  }
+
+  /* showroomtekst, of alles weg als er geen showroom is */
+  if (C.SHOWROOM){
+    document.querySelectorAll('[data-showroom]').forEach(function(e){ e.textContent = C.SHOWROOM; });
+  } else {
+    document.querySelectorAll('[data-showroom-rij]').forEach(function(e){ e.style.display='none'; });
+    document.querySelectorAll('[data-showroom]').forEach(function(e){
+      e.textContent = 'Stalen op aanvraag op te sturen';
+    });
+  }
+
+  /* ── Merknaam aan of uit ─────────────────────────────────── */
+  var merk = C.TOON_MERK ? C.PROFIELMERK : '';
+  function vul(sel,t){ document.querySelectorAll(sel).forEach(function(e){ e.textContent = t; }); }
+  function accent(t){
+    return String(t||'').replace(/\*(.+?)\*/g, '<span class="gloed">$1</span>');
+  }
+  vul('[data-partner-sterkte]', C.PARTNER_STERKTE || '');
+
+  var tz = document.getElementById('toonzaal');
+  if (tz){
+    if (C.TOONZAAL_TONEN){
+      var tzB = document.getElementById('tzBeeld');
+      if (tzB && B['toonzaal']){
+        tzB.src = B['toonzaal'];
+        tzB.alt = 'Toonzaal van ' + (C.TOONZAAL_PARTNER || 'ons partnerbedrijf');
+      } else {
+        var tzF = document.getElementById('tzFoto'); if (tzF) tzF.remove();
+      }
+      vul('[data-tz-partner]', C.TOONZAAL_PARTNER || 'ons partnerbedrijf');
+      vul('[data-tz-tijden]',  C.TOONZAAL_TIJDEN  || 'Enkel op afspraak');
+      vul('[data-tz-naam]', (C.TOONZAAL_PARTNER || '') +
+          (C.TOONZAAL_MERK ? ' · ' + C.TOONZAAL_MERK : ''));
+
+      var uu = document.getElementById('tzUren');
+      if (uu && Array.isArray(C.TOONZAAL_UREN) && C.TOONZAAL_UREN.length){
+        var vandaag = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'][new Date().getDay()];
+        uu.innerHTML = '<span class="uren-kop">Openingsuren</span>' +
+          C.TOONZAAL_UREN.map(function(r){
+            var dicht = /gesloten/i.test(r[1]);
+            return '<span class="' + (dicht ? 'dicht' : '') + '"' +
+                   (r[0] === vandaag ? ' style="color:var(--wit)"' : '') +
+                   '>' + r[0] + '<b>' + r[1] + '</b></span>';
+          }).join('');
+      } else if (uu) { uu.remove(); }
+
+      var adres = [C.TOONZAAL_STRAAT, C.TOONZAAL_PLAATS].filter(Boolean).join(', ');
+      if (adres){
+        vul('[data-tz-adres]', adres);
+        var kaart = C.TOONZAAL_KAART ||
+          ('https://www.google.com/maps/search/?api=1&query=' +
+           encodeURIComponent((C.TOONZAAL_PARTNER ? C.TOONZAAL_PARTNER + ' ' : '') + adres));
+        document.querySelectorAll('[data-tz-kaart]').forEach(function(e){ e.href = kaart; });
+      } else {
+        document.querySelectorAll('[data-tz-adres-rij],[data-tz-kaart-rij]')
+          .forEach(function(e){ e.style.display = 'none'; });
+      }
+    } else {
+      tz.remove();
+      var nv = document.getElementById('navTz'); if (nv) nv.remove();
+    }
+  }
+  vul('[data-tz-partner]', C.TOONZAAL_PARTNER || 'ons partnerbedrijf');
+
+  var mT = document.getElementById('merkTekst');
+  if (mT) mT.innerHTML = accent(C.MERK_TEKST || C.BEDRIJFSNAAM);
+
+  var hT = document.getElementById('heroTitel'), hO = document.getElementById('heroOpening');
+  if (hT) hT.innerHTML = accent(C.TITEL);
+  if (hO) hO.innerHTML = accent(C.OPENING);
+
+  vul('[data-besparing]', C.BESPARING);
+  vul('[data-vergelijking]', C.VERGELIJKING);
+  vul('[data-merk-zin]', C.TOON_MERK ? (merk+' '+C.SYSTEEM_PVC+' pvc en '+C.SYSTEEM_ALU+' aluminium') : 'pvc en aluminium');
+  vul('[data-systeem-lead]', C.TOON_MERK
+    ? ('We werken met '+merk+', een Belgische fabrikant. Twee systemen dekken zo goed als elk dossier: '+C.SYSTEEM_PVC+' in pvc en '+C.SYSTEEM_ALU+' in aluminium.')
+    : 'Twee systemen dekken zo goed als elk dossier: een pvc-platform voor het gros van de openingen en aluminium voor de grote glaspartijen.');
+  vul('[data-sys-pvc-titel]', C.TOON_MERK ? (merk+' '+C.SYSTEEM_PVC) : 'pvc-profielen');
+  vul('[data-sys-alu-titel]', C.TOON_MERK ? (merk+' '+C.SYSTEEM_ALU) : 'aluminiumprofielen');
+  vul('[data-u-pvc]',   C.TOON_MERK ? ('pvc — '+C.SYSTEEM_PVC) : 'pvc');
+  vul('[data-u-alu]',   C.TOON_MERK ? ('aluminium — '+C.SYSTEEM_ALU) : 'aluminium');
+  vul('[data-u-beide]', 'pvc of aluminium');
+  vul('[data-merk-disclaimer]', C.TOON_MERK
+    ? (' · '+merk+' is een merk van de betreffende fabrikant. Wij verwerken deze profielen; deze site is geen uiting van of namens de merkhouder.')
+    : '');
+
+
+  var vv = C.TOON_MERK ? (C.SYSTEEM_PVC + ' ') : '';
+  var modellen = [
+    { naam: vv+'Infinity',             tag:'pvc',
+      uitleg:'De standaard voor het gros van de raamopeningen. Strak profiel, goede isolatie, en de meest gangbare keuze bij een renovatie.' },
+    { naam: vv+'ThermoFibra Infinity', tag:'pvc · topisolatie',
+      uitleg:'Zelfde uitzicht als Infinity, maar met glasvezel in de vleugel in plaats van staal. Daardoor valt de koudebrug weg en haal je de hoogste isolatiewaarden.' },
+    { naam: vv+'Abstract',             tag:'pvc · design',
+      uitleg:'Vlakke vleugel met de smalste zichtlijnen van het gamma. Meer glas bij dezelfde opening, voor wie een strak en modern beeld wil.' },
+    { naam: vv+'Origin',               tag:'pvc · klassiek',
+      uitleg:'Afgerond profiel met een traditionelere lijn. Past bij woningen met karakter waar een strak vlak profiel te hard oogt.' },
+    { naam: vv+'Autentica',            tag:'pvc · sierstijlen',
+      uitleg:'Met decoratieve stijlen in het glas, voor klassieke gevels en kruisverdelingen.' },
+    { naam:(C.TOON_MERK?C.SYSTEEM_PVC+'-':'')+'schuiframen', tag:'pvc en aluminium',
+      uitleg:'Schuif- en hefschuifsystemen voor terras- en tuinaansluitingen. In aluminium voor de grote glaspartijen.' }
+  ];
+
+
+  /* ── Kleuren ─────────────────────────────────────────────────
+     [ref, naam, RAL, hex, soort]  — soort: 's' standaard, 'x' special
+     De hexwaarden zijn gemeten uit de officiële kleurenkaart en
+     dienen als terugval wanneer de staalafbeeldingen uitstaan.
+  ------------------------------------------------------------- */
+  var groepen = [
+    { id:'solids', naam:'Solids', uitleg:'Uniforme kleurfolies, glad of mat.', kleuren:[
+      ['687','Verkeerswit','RAL ±9016','#F6FBFA','s'],
+      ['358','Wit mat','RAL ±9010','#FCF8F3','s'],
+      ['329','Beige mat','RAL ±9001','#F4F4E8','s'],
+      ['625','Signaalgrijs glad','RAL ±7004','#9D9895','s'],
+      ['649','Moondance glad','RAL n.b.','#8B887F','s'],
+      ['911','Grijsaluminium glad','RAL ±7039','#7D7161','s'],
+      ['627','Kwartsgrijs mat','RAL ±7039','#6F6F65','s'],
+      ['657','Basaltgrijs mat','RAL ±7012','#5C5E57','s'],
+      ['678','Leigrijs mat','RAL ±7015','#50524F','s'],
+      ['044','Ombergrijs mat','RAL ±7022','#51524D','s'],
+      ['347','Sepia bruin mat','RAL ±8014','#4A3B28','s'],
+      ['103','Antracietgrijs mat','RAL ±7016','#2C2C2C','s'],
+      ['048','Antracietgrijs glad','RAL ±7016','#292D31','s'],
+      ['124','Zwartgrijs mat','RAL ±7021','#242520','s'],
+      ['043','Grafietzwart mat','RAL ±9011','#171717','s']
+    ]},
+    { id:'coloured', naam:'Coloured Wood', uitleg:'Uniforme kleurfolies met houtprint, in aardse en natuurlijke tinten.', kleuren:[
+      ['019','Zuiver wit','RAL ±9010','#FEFCEF','s'],
+      ['096','Crème wit','RAL ±9001','#FCEBD4','s'],
+      ['907','Lichtgrijs','RAL ±7035','#CFD0CA','s'],
+      ['409','Zijdegrijs','RAL ±7044','#AAB3A2','s'],
+      ['665','Agaatgrijs','RAL ±7038','#DBDAD6','s'],
+      ['004','Grijs','RAL ±7001','#959D9F','s'],
+      ['114','Betongrijs','RAL ±7023','#7B7C6E','s'],
+      ['068','Kwartsgrijs','RAL ±7039','#777772','s'],
+      ['667','Basaltgrijs','RAL ±7012','#505653','s'],
+      ['072','Antracietgrijs','RAL ±7016','#2B343B','s'],
+      ['008','Chocoladebruin','RAL ±8022','#200E02','s'],
+      ['085','Monumentengroen','RAL n.b.','#151A13','s'],
+      ['690','Grafietzwart stylo','RAL ±9011','#222222','s'],
+      ['012','Zwartbruin','RAL n.b.','#100B07','s'],
+      ['076','Wijnrood','RAL ±3005','#6E101E','s'],
+      ['079','Staalblauw','RAL ±5011','#131E35','s'],
+      ['006','Dennengroen','RAL ±6009','#1A2E19','s']
+    ]},
+    { id:'natural', naam:'Natural Wood', uitleg:'Imitatie van natuurlijke houtkleuren en -structuren.', kleuren:[
+      ['143','Grijze ceder','RAL n.b.','#9C8C7A','s'],
+      ['047','Woodec Turner Eik Malt','RAL n.b.','#A17E66','s'],
+      ['109','Wilde kers','RAL n.b.','#A16B47','s'],
+      ['110','Gouden eik','RAL n.b.','#795023','s'],
+      ['144','Macoré','RAL n.b.','#3E1D13','s'],
+      ['154','Notenboom','RAL n.b.','#5E391E','s'],
+      ['026','Mahonie (Sapeli)','RAL n.b.','#3C1805','s'],
+      ['025','Donkere eik','RAL n.b.','#27140F','s'],
+      ['694','Sheffield lichte eik','RAL n.b.','#C0B3A2','x'],
+      ['663','Walnoot Sorrento Balsamico','RAL n.b.','#713D17','x'],
+      ['346','Woodec Turner Eik Walnut','RAL n.b.','#764D32','x'],
+      ['342','Woodec Turner Eik Toffee','RAL n.b.','#563A2C','x']
+    ]},
+    { id:'mattex', naam:'Solid Mattex', uitleg:'Uniforme kleurfolies met een extra matte uitstraling.', kleuren:[
+      ['353','Mattex Shine Beige','RAL n.b.','#A59E88','x'],
+      ['333','Terracotta mat','RAL n.b.','#9A612A','x'],
+      ['351','Mattex groengrijs','RAL ±7009','#6D6F59','x'],
+      ['309','Mattex kwartsgrijs','RAL ±7039','#706D66','x'],
+      ['305','Mattex basaltgrijs','RAL ±7012','#5D5F5A','x'],
+      ['303','Mattex antracietgrijs','RAL ±7016','#484A49','x'],
+      ['304','Mattex grafietzwart','RAL ±9011','#1E1E1E','x']
+    ]},
+    { id:'metallics', naam:'Metallics', uitleg:'Uniforme kleurfolies met een industriële metallic look.', kleuren:[
+      ['658','Geborsteld aluminium','RAL n.b.','#AFAFAF','x'],
+      ['925','Wit aluminium','RAL n.b.','#AFAEA9','x'],
+      ['116','Pyriet','RAL n.b.','#9D8F76','x'],
+      ['247','Brons','RAL n.b.','#463721','x']
+    ]}
+  ];
+
+  if (!C.TOON_SPECIALS){
+    groepen.forEach(function(g){ g.kleuren = g.kleuren.filter(function(k){ return k[4]==='s'; }); });
+    groepen = groepen.filter(function(g){ return g.kleuren.length; });
+  }
+
+  var alle = [];
+  groepen.forEach(function(g){
+    g.kleuren.forEach(function(k){
+      alle.push({ ref:k[0], naam:k[1], ral:k[2], hex:k[3], spec:k[4]==='x', groep:g.naam, gid:g.id });
+    });
+  });
+  document.getElementById('aantalKleuren').textContent = alle.length;
+
+  var kRef = alle[0].ref, actieveGroep = groepen[0].id, zoekterm = '';
+  var doek = document.getElementById('tekening');
+
+  function kleurVan(ref){
+    for (var i=0;i<alle.length;i++){ if (alle[i].ref===ref) return alle[i]; }
+    return alle[0];
+  }
+
+  function kiesKleur(){
+    var k = kleurVan(kRef);
+    var vlak = document.getElementById('gekozenVlak');
+    if (FOTOS[k.ref]){ vlak.style.backgroundImage = 'url('+FOTOS[k.ref]+')'; vlak.style.backgroundColor=''; }
+    else { vlak.style.backgroundImage = 'none'; vlak.style.backgroundColor = k.hex; }
+
+    document.getElementById('gekozenNaam').textContent = k.naam;
+    document.getElementById('gekozenRef').textContent =
+      'Ref. ' + k.ref + ' · ' + k.ral + ' · ' + k.groep + (k.spec ? ' · special' : '');
+
+    var vk = document.getElementById('kleurkeuze');
+    if (vk) vk.value = k.naam + ' (ref. ' + k.ref + ')';
+
+    document.querySelectorAll('.staal').forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.ref===kRef ? 'true':'false');
+    });
+  }
+
+  /* modelkaarten en de keuzelijst in het formulier */
+  var mRaster = document.getElementById('modelraster');
+  var mKeuze  = document.getElementById('modelkeuze');
+  modellen.forEach(function(m){
+    var kaart = document.createElement('article');
+    kaart.className = 'modelkaart';
+    kaart.innerHTML = '<span class="tag">'+(m.tag||'pvc')+'</span>'
+                    + '<h3>'+m.naam+'</h3><p>'+m.uitleg+'</p>';
+    mRaster.appendChild(kaart);
+
+    if (mKeuze){
+      var o = document.createElement('option');
+      o.textContent = m.naam;
+      mKeuze.appendChild(o);
+    }
+  });
+  if (mKeuze){
+    var nog = document.createElement('option');
+    nog.textContent = 'Nog te bepalen';
+    mKeuze.insertBefore(nog, mKeuze.firstChild);
+    mKeuze.value = 'Nog te bepalen';
+  }
+
+  /* groepknoppen */
+  var gHouder = document.getElementById('groepknoppen');
+  var knoppen = groepen.map(function(g){
+    return {id:g.id, naam:g.naam, aantal:g.kleuren.length};
+  });
+  knoppen.forEach(function(k){
+    var b = document.createElement('button');
+    b.className='groepknop'; b.type='button'; b.dataset.g=k.id;
+    b.setAttribute('aria-pressed', k.id===actieveGroep ? 'true':'false');
+    b.innerHTML = k.naam + '<small>' + k.aantal + '</small>';
+    b.addEventListener('click', function(){
+      actieveGroep = k.id;
+      gHouder.querySelectorAll('.groepknop').forEach(function(x){
+        x.setAttribute('aria-pressed', x===b ? 'true':'false');
+      });
+      bouwKleuren();
+    });
+    gHouder.appendChild(b);
+  });
+
+  /* kleurstalen */
+  var kHouder = document.getElementById('kleurenLijst');
+  var telling = document.getElementById('telling');
+
+  function past(k){
+    if (!zoekterm) return k.gid === actieveGroep;
+    var t = zoekterm.toLowerCase();
+    return (k.naam.toLowerCase().indexOf(t)>-1) ||
+           (k.ref.toLowerCase().indexOf(t)>-1) ||
+           (k.ral.toLowerCase().indexOf(t)>-1) ||
+           (k.groep.toLowerCase().indexOf(t)>-1);
+  }
+
+  function bouwKleuren(){
+    kHouder.innerHTML = '';
+    var getoond = 0;
+    groepen.forEach(function(g){
+      var lijst = alle.filter(function(k){ return k.gid===g.id && past(k); });
+      if (!lijst.length) return;
+      getoond += lijst.length;
+
+      var titel = document.createElement('p');
+      titel.className='groeptitel';
+      titel.innerHTML = g.naam + '<em>' + g.uitleg + '</em>';
+      kHouder.appendChild(titel);
+
+      var raster = document.createElement('div');
+      raster.className='stalen';
+      lijst.forEach(function(k){
+        var b = document.createElement('button');
+        b.className='staal'; b.type='button'; b.dataset.ref=k.ref;
+        b.setAttribute('aria-pressed', k.ref===kRef ? 'true':'false');
+        b.setAttribute('aria-label', k.naam+', referentie '+k.ref+', '+k.ral+(k.spec?', special':''));
+        var stijl = FOTOS[k.ref] ? 'background-image:url('+FOTOS[k.ref]+')' : 'background-color:'+k.hex;
+        b.innerHTML =
+          '<span class="vlak" style="'+stijl+'">' +
+          (k.spec ? '<span class="spec" title="Special: mogelijk meerprijs en langere levertermijn">*</span>' : '') +
+          '</span>' +
+          '<span class="ref">REF. '+k.ref+'</span>' +
+          '<span class="ral">'+k.ral+'</span>' +
+          '<span class="naam">'+k.naam+'</span>';
+        b.addEventListener('click', function(){ kRef=k.ref; kiesKleur(); });
+        raster.appendChild(b);
+      });
+      kHouder.appendChild(raster);
+    });
+
+    if (!getoond){
+      kHouder.innerHTML = '<p class="leeg">Geen kleur gevonden. Probeer een andere term, of kies een groep hierboven.</p>';
+    }
+    telling.textContent = zoekterm
+      ? (getoond + ' van ' + alle.length + ' kleuren')
+      : (getoond + ' kleuren in deze groep');
+  }
+
+  document.getElementById('zoek').addEventListener('input', function(e){
+    zoekterm = e.target.value.trim();
+    bouwKleuren();
+  });
+
+  bouwKleuren();
+  kiesKleur();
+
+  /* ── Referenties ─────────────────────────────────────────── */
+  var refs = Array.isArray(C.REFERENTIES) ? C.REFERENTIES : [];
+  if (refs.length){
+    document.getElementById('referenties').classList.remove('verborgen');
+    document.getElementById('navRef').classList.remove('verborgen');
+    var houder = document.getElementById('refs');
+    refs.forEach(function(r,i){
+      var kaart = document.createElement('article'); kaart.className='ref';
+      var beeld = document.createElement('div'); beeld.className='ref-beeld';
+      if (r.voor && r.na){
+        beeld.innerHTML =
+          '<img src="'+r.voor+'" alt="Voor de werken'+(r.titel?' — '+r.titel:'')+'" loading="lazy">' +
+          '<img class="na" src="'+r.na+'" alt="Na de werken'+(r.titel?' — '+r.titel:'')+'" loading="lazy">' +
+          '<div class="ref-greep"></div><span class="ref-label l">Voor</span><span class="ref-label r">Na</span>' +
+          '<input class="ref-schuif" type="range" min="0" max="100" value="50" aria-label="Schuif tussen de foto voor en na de werken">';
+        beeld.style.setProperty('--split','50%');
+        var sch = beeld.querySelector('.ref-schuif');
+        sch.addEventListener('input', function(){ beeld.style.setProperty('--split', sch.value+'%'); });
+      } else if (r.na || r.voor){
+        beeld.innerHTML = '<img src="'+(r.na||r.voor)+'" alt="'+(r.titel||'Uitgevoerd project')+'" loading="lazy">';
+      }
+      var tekst = document.createElement('div'); tekst.className='ref-tekst';
+      var lijnen = '';
+      if (r.details)  lijnen += '<li>'+r.details+'</li>';
+      if (r.doorloop) lijnen += '<li>'+r.doorloop+'</li>';
+      tekst.innerHTML = '<h3>'+(r.titel||'Project '+(i+1))+'</h3>' +
+        (r.plaats?'<p class="ref-plaats">'+r.plaats+'</p>':'') +
+        (lijnen?'<ul>'+lijnen+'</ul>':'');
+      kaart.appendChild(beeld); kaart.appendChild(tekst); houder.appendChild(kaart);
+    });
+  }
+
+
+  /* ── Beeldmateriaal ──────────────────────────────────────── */
+  var bb = document.getElementById('bandBreed'), bs = document.getElementById('bandSmal');
+  if (B['logo-plaat'] && B['muur-korrel']){
+    var lagen = 'url(' + B['logo-plaat'] + '),url(' + B['muur-korrel'] + ')';
+    if (bb) bb.style.backgroundImage = lagen;
+    if (bs) bs.style.backgroundImage = lagen;
+  }
+
+  var hero = document.getElementById('heroBeeld');
+  var heroKader = document.getElementById('heroKader');
+  if (hero){
+    if (C.HERO_LOGO){
+      hero.src = C.HERO_LOGO;
+      hero.alt = C.BEDRIJFSNAAM + ' — ' + C.SLOGAN;
+      if (heroKader) heroKader.classList.add('is-logo');
+    } else if (C.HERO_FOTO){
+      hero.src = B['leefruimte-keuken-zwart'] || C.HERO_FOTO;
+    }
+  }
+
+  var galHouder = document.getElementById('galerij');
+  var lichtbak = document.getElementById('lichtbak');
+  var lbBeeld = document.getElementById('lichtbakBeeld');
+  var lbTekst = document.getElementById('lichtbakTekst');
+
+  (C.GALERIJ || []).forEach(function(g){
+    var knop = document.createElement('button');
+    knop.className = 'gfoto'; knop.type = 'button';
+    knop.setAttribute('aria-label', 'Vergroot: ' + g.titel);
+    knop.innerHTML =
+      '<figure><img src="'+(B[g.bestand] || ('fotos/'+g.bestand+'-klein.jpg'))+'" alt="'+g.titel+' — '+g.detail+'" loading="lazy" decoding="async"></figure>' +
+      '<b>'+g.titel+'</b><span>'+g.detail+'</span>';
+    knop.addEventListener('click', function(){
+      lbBeeld.src = B[g.bestand] || ('fotos/'+g.bestand+'.jpg');
+      lbBeeld.alt = g.titel + ' — ' + g.detail;
+      lbTekst.textContent = g.titel + ' — ' + g.detail;
+      if (lichtbak.showModal) lichtbak.showModal();
+    });
+    galHouder.appendChild(knop);
+  });
+
+  document.getElementById('sluitKnop').addEventListener('click', function(){ lichtbak.close(); });
+  lichtbak.addEventListener('click', function(e){ if (e.target === lichtbak) lichtbak.close(); });
+  lichtbak.addEventListener('close', function(){ lbBeeld.removeAttribute('src'); });
+
+  /* ── Paneel met modellen en kleuren ──────────────────────── */
+  var paneel = document.getElementById('catalogus');
+  function paneelOpen(aan){
+    if (!paneel) return;
+    paneel.hidden = !aan;
+    document.body.classList.toggle('paneel-open', aan);
+    if (aan) paneel.querySelector('.paneel-in').scrollTop = 0;
+  }
+  document.querySelectorAll('[data-paneel]').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); paneelOpen(true); });
+  });
+  var cs = document.getElementById('catSluit');
+  if (cs) cs.addEventListener('click', function(){ paneelOpen(false); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && paneel && !paneel.hidden) paneelOpen(false);
+  });
+
+  /* ── Mobiel menu ─────────────────────────────────────────── */
+  var knop = document.getElementById('navToggle'), links = document.getElementById('navLinks');
+  knop.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    knop.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  links.addEventListener('click', function(e){
+    if (e.target.tagName === 'A'){ links.classList.remove('open'); knop.setAttribute('aria-expanded','false'); }
+  });
+
+  /* ── btw-tip verschijnt bij particulieren ────────────────── */
+  var soort = document.getElementById('soort'), tip = document.getElementById('btwTip');
+  function tipCheck(){
+    if (soort.value === 'Particulier') tip.classList.add('zichtbaar');
+    else tip.classList.remove('zichtbaar');
+  }
+  soort.addEventListener('change', tipCheck);
+  tipCheck();
+
+  /* ── Formulier ───────────────────────────────────────────── */
+  var form = document.getElementById('offerteForm'), melding = document.getElementById('melding');
+  function toonM(t){ melding.textContent=t; melding.classList.add('zichtbaar'); }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()){ form.reportValidity(); return; }
+    var data = new FormData(form);
+    if (C.FORMULIER_ENDPOINT){
+      fetch(C.FORMULIER_ENDPOINT, {method:'POST', body:data, headers:{'Accept':'application/json'}})
+        .then(function(r){
+          if (r.ok){ form.reset(); tipCheck(); toonM('Verstuurd. Je krijgt een prijs binnen '+C.REACTIETERMIJN+'.'); }
+          else { toonM('Versturen lukte niet. Mail rechtstreeks naar '+C.EMAIL+'.'); }
+        })
+        .catch(function(){ toonM('Versturen lukte niet. Mail rechtstreeks naar '+C.EMAIL+'.'); });
+    } else {
+      var regels = [];
+      data.forEach(function(w,s){ regels.push(s+': '+w); });
+      window.location.href = 'mailto:'+C.EMAIL+
+        '?subject='+encodeURIComponent('Prijsaanvraag — '+(data.get('naam')||''))+
+        '&body='+encodeURIComponent(regels.join('\n'));
+      toonM('Je mailprogramma opent met alles ingevuld. Klik daar op verzenden.');
+    }
+  });
+})();
+</script>
+</body>
+</html>
